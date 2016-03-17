@@ -1,0 +1,32 @@
+@media (max-width: 767px) {
+    .pull-left-xs {
+        float: left !important;
+    }
+    .pull-right-xs {
+        float: right !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .pull-left-sm {
+        float: left !important;
+    }
+    .pull-right-sm {
+        float: right !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .pull-left-md {
+        float: left !important;
+    }
+    .pull-right-md {
+        float: right !important;
+    }
+}
+@media (min-width: 1200px) {
+    .pull-left-lg {
+        float: left !important;
+    }
+    .pull-right-lg {
+        float: right !important;
+    }
+}
