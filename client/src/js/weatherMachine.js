@@ -12,13 +12,24 @@ var weather = {
 	humidity: null
 };
 function startTheWeatherMachine(data) {
-	weather.place = data.name;
-	weather.desc = data.weather[0].description;
-	weather.code = data.weather[0].id;
-	weather.temp.cur = data.main.temp;
-	weather.wind.speed = data.wind.speed;
-	weather.wind.degree = data.wind.deg;
-	weather.humidity = data.main.humidity;
+	try {
+		weather.place = data.name;
+		weather.desc = data.weather[0].description;
+		weather.code = data.weather[0].id;
+		weather.temp.cur = data.main.temp;
+		weather.wind.speed = data.wind.speed;
+		weather.wind.degree = data.wind.deg;
+		weather.humidity = data.main.humidity;
+	} catch(e) {
+		weather.place = 'Placeholder, Oops';
+		weather.desc = 'An error occured';
+		weather.code = 500;
+		weather.temp.cur = 40;
+		weather.wind.speed = 5;
+		weather.wind.degree = getRandomInRange(0, 10, 2);
+		weather.humidity = 38;
+
+	}
 
 	updateInfo();
 }
