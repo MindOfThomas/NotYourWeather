@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Not Your Weather</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://css-spinners.com/css/spinner/spinner.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/weathericons.min.css">
+	<link rel="stylesheet" type="text/css" href="css/min.css">
+</head>
+<body>
+	<div class="container full navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand">Not Your Weather</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="text-center"><a href="/about">About</a></li>
+					<li class="text-center"><a href="/privacy">Privacy</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-xs-12">
+			<div class="text-center" id="radios">
+				<label>
+					<input type="radio" id="unit-imperial" name="unit" value="imperial" checked="checked"><span>&deg;F, MPH</span>
+				</label>
+				<label>
+					<input type="radio" id="unit-metric" name="unit" value="metric"><span>&deg;C, KPH</span>
+				</label>
+			</div>
+			<div class="input-group input-group-lg">
+				<input type="text" id="location-input" class="form-control" placeholder="City, State, Whatever"> <span class="input-group-btn"><button type="button" id="location-button" class="btn btn-primary">Go!</button></span>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<div class="col-xs-12 text-center" id="loading" style="display: none;">
+				<div class="col-xs-12">
+					<h4>Loading...</h4>
+					<div class="spinner-loader">Loading...</div>
+				</div>
+			</div>
+			<div class="panel panel-warning" id="limit-warning" style="display: none;">
+				<div class="panel-heading">
+					<p>Maybe you should take a break from checking the weather. Isn't the weather in <span id="gen-warnplace"></span> good enough for you?</p>
+				</div>
+			</div>
+			<div class="panel panel-warning" id="limit-error" style="display: none;">
+				<div class="panel-heading">
+					<p>It looks like too many people are checking the weather. There's no room in this boat for you right now, I'm so terribly sorry.</p>
+				</div>
+			</div>
+			<div class="col-xs-12 text-center" id="loaded" style="display: none;">
+				<div class="col-xs-12">
+					<h3>
+						<span id="gen-place"></span>'s Weather
+					</h3>
+					<div>
+						<p id="gen-desc"></p>
+						<i id="gen-img" class="wi weatherimg-big"></i>
+					</div>
+					<h4>
+						<span id="gen-temp-cur"></span>
+					</h4>
+					<h4>
+						<small>Wind: </small><span id="gen-wind-speed"></span> (<span id="gen-wind-degree"></span>)
+					</h4>
+					<h4>
+						<span id="gen-humidity"></span> <small>humidity</small>
+					</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container full text-center">
+			<div style="display:none;" id="dff">
+				<a href="http://www.dailyfalsefacts.com" target="_blank" title="Daily False Facts"><img src="/img/dff.png" alt="Daily False Facts"></a>
+			</div>
+			<div class="well well-sm">
+				<p>
+					Weather data provided by <a href="http://openweathermap.org/" target="_blank">OpenWeatherMap</a>
+				</p>
+				<p>
+					Check out this site's source code on <a href="http://mindofthomas.github.io/NotYourWeather" target="_blank">GitHub</a>!
+				</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/blockadblock.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<!--<script src="js/jqueryui.js"></script>-->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnF5fUAK7rlE0iu44yAf9xN1wVzVx2QrU&libraries=places"></script>
+	<script type="text/javascript" src="js/min.js"></script>
+</body>
+</html>
