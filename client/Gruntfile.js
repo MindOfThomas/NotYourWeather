@@ -5,7 +5,11 @@ module.exports = function(grunt) {
 		concat: {
 			js: {
 				options: {sourceMap: true},
-				src: ['src/js/persistence.js', 'src/js/startHere.js', 'src/js/**/*.js'],
+				src: ['src/js/env.js',
+					'src/js/persistence.js',
+					'src/js/startHere.js',
+					'src/js/**/*.js',
+					'!src/js/env-sample.js'],
 				dest: 'build/js/min.js'
 			},
 			css: {
